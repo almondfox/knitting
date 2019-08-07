@@ -17,15 +17,15 @@ class Color(models.Model):
 
 class Hat(models.Model):
     name = models.CharField(max_length=100)
-    colors = models.ManyToManyField(Color, related_name='hats', through='Availability')
+    colors = models.ManyToManyField(Color, related_name='hats', through='Availability', blank=True)
     consumables = models.ManyToManyField(Consumable, related_name='hats')
     availability_status = models.IntegerField(choices=STATUS, default=0)
-    photo = models.ImageField()
-    description = models.URLField(max_length=128, unique=True)
+    photo = models.ImageField(blank=True)
+    description = models.URLField(max_length=128, unique=True, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     expense = models.DecimalField(max_digits=5, decimal_places=2)
     revenue = models.DecimalField(max_digits=5, decimal_places=2)
-    actual_discount = models.IntegerField()
+    actual_discount = models.IntegerField(null=True, blank=True)
     spent_time = models.DecimalField(max_digits=3, decimal_places=1)
 
     def __str__(self):

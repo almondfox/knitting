@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models.consumable import Consumable
 
-# Register your models here.
+admin.site.register(Consumable)
