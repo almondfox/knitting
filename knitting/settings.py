@@ -70,6 +70,13 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "accounting/assets"),
+    os.path.join(BASE_DIR, "assortment/assets"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+
 WSGI_APPLICATION = 'knitting.wsgi.application'
 
 
