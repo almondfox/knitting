@@ -1,0 +1,1 @@
+from .consumable import Consumable
